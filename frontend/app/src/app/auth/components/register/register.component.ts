@@ -21,10 +21,10 @@ export class RegisterComponent implements OnInit {
     this.passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     this.emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     this.registerForm = this.formBuilder.group({
-      name:[null,[Validators.required]],
+      name:[null,[Validators.required,Validators.maxLength(50),Validators.minLength(4)]],
       email:[null,[Validators.required,Validators.pattern(this.emailRegex)]],
-      adress:[null,[Validators.required]],
-      phone:[null,[Validators.required,Validators.maxLength(8),Validators.minLength(8)]],
+      //adress:[null,[Validators.required]],
+      //phone:[null,[Validators.required,Validators.maxLength(8),Validators.minLength(8)]],
       password:[null,[Validators.required,Validators.pattern(this.passwordRegex )]],
       confirmPassword:[null,[Validators.required,Validators.pattern(this.passwordRegex )]],
       acceptTerms:[false, [Validators.requiredTrue]],
@@ -48,9 +48,10 @@ export class RegisterComponent implements OnInit {
       localStorage.setItem('Token',token)
       console.log(token)
         },
-    (err:HttpErrorResponse)=>{
-      console.log("erooro")
-    }
+        (err) => {
+          err.message;
+          console.log(err.message);
+        }
   )
  }
 }

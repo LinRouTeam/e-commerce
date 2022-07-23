@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema({
     name:{
         type:String,
         required: [true, 'please provide first name'],
-        maxlength:70,
+        maxlength:50,
         minlength:4,
     },
 
@@ -33,14 +33,12 @@ const UserSchema = new mongoose.Schema({
     //length and number??
     phone: {
         type: String,
-        required: [true, 'please provide phone number'],
         minlength: 8,
         maxlength: 8,
 
     },
     adress: {
         type: String,
-        required: [true, 'please provide an adress'],
    
 
     },
