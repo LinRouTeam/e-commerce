@@ -9,20 +9,29 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DialogComponent } from './components/dialog/dialog.component'
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { ModalContentComponent } from './components/modal-content/modal-content.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    DialogComponent
+    DialogComponent,
+    ModalContentComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    TooltipModule.forRoot(),
+    AlertModule.forRoot(),
+    ModalModule.forRoot(),
+
 
   ],
   exports:[
@@ -30,7 +39,12 @@ import { DialogComponent } from './components/dialog/dialog.component'
     ReactiveFormsModule,
     FooterComponent,
     HttpClientModule,
-    DialogComponent
+    DialogComponent, 
+    TooltipModule,
+    AlertModule,
+    ModalModule
+
+
   ],
 
 })

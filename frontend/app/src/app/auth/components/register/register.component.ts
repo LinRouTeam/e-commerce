@@ -1,8 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/service/auth.service';
 import Validation from '../Utils/validation';
+import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
+import { ModalContentComponent } from 'src/app/shared/components/modal-content/modal-content.component';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,8 +15,10 @@ export class RegisterComponent implements OnInit {
   registerForm!:FormGroup
   passwordRegex!: RegExp;
   emailRegex!: RegExp;
+  bsModalRef?: BsModalRef;
   constructor(public formBuilder:FormBuilder,
-    public authService:AuthService) {
+    public authService:AuthService,
+    private modalService: BsModalService) {
 
    }
 
@@ -49,9 +54,21 @@ export class RegisterComponent implements OnInit {
       console.log(token)
         },
         (err) => {
+          this.openModalWithComponent()
           err.message;
           console.log(err.message);
         }
   )
  }
+ openModalWithComponent() {
+  const initialState: ModalOptions = {
+    initialState: {
+      body:'Email aleardy registred',
+      title: 'Registration failed'
+    }
+  };
+  this.bsModalRef = this.modalService.show(ModalContentComponent, initialState);
+  this.bsModalRef.content.closeBtnName = 'Close';
+}
+
 }
