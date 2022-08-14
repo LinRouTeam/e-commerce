@@ -8,18 +8,17 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DialogComponent } from './components/dialog/dialog.component'
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    DialogComponent,
     ModalContentComponent
   ],
   imports: [
@@ -31,6 +30,7 @@ import { ModalContentComponent } from './components/modal-content/modal-content.
     TooltipModule.forRoot(),
     AlertModule.forRoot(),
     ModalModule.forRoot(),
+    CarouselModule.forRoot()
 
 
   ],
@@ -39,10 +39,10 @@ import { ModalContentComponent } from './components/modal-content/modal-content.
     ReactiveFormsModule,
     FooterComponent,
     HttpClientModule,
-    DialogComponent, 
     TooltipModule,
     AlertModule,
-    ModalModule
+    ModalModule,
+    CarouselModule
 
 
   ],

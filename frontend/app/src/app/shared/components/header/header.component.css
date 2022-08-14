@@ -7,4 +7,8 @@ a{
     font-family: 'Poppins', sans-serif;
     letter-spacing: .025em;
     line-height: 1.5;
+    margin-left: 1.5rem;
+}
+nav{
+    background-color: white;
 }
