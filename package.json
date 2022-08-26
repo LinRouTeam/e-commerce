@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@auth0/angular-jwt": "^5.0.2"
+    "@auth0/angular-jwt": "^5.0.2",
+    "@transmute/security-context": "^0.7.0-unstable.66"
   }
 }

@@ -11,9 +11,6 @@ import { LandingComponent } from './components/landing/landing.component';
       { path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
      },
-     { path: 'shop',
-    loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule),
-     },
   ],}
   ])],
   exports: [RouterModule]

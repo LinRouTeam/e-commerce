@@ -10,11 +10,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
-
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import {NgToastModule} from 'ng-angular-popup'
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     TooltipModule.forRoot(),
     AlertModule.forRoot(),
     ModalModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    NgToastModule
 
 
   ],
@@ -43,8 +44,8 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     TooltipModule,
     AlertModule,
     ModalModule,
-    CarouselModule
-
+    CarouselModule,
+    NgToastModule
 
   ],
   providers: [

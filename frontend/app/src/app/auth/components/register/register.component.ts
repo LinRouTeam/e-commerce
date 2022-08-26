@@ -1,11 +1,9 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/service/auth.service';
 import Validation from '../Utils/validation';
-import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
-import { ModalContentComponent } from 'src/app/shared/components/modal-content/modal-content.component';
-
+import {  BsModalRef } from 'ngx-bootstrap/modal';
+import { NgToastService } from 'ng-angular-popup';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -16,10 +14,13 @@ export class RegisterComponent implements OnInit {
   passwordRegex!: RegExp;
   emailRegex!: RegExp;
   bsModalRef?: BsModalRef;
-  constructor(public formBuilder:FormBuilder,
-    public authService:AuthService,
-    private modalService: BsModalService) {
+  alerts: any[] = [{
+    
+  }];
 
+  constructor(public formBuilder:FormBuilder,
+    public authService:AuthService , private Toast:NgToastService) {
+     
    }
 
   ngOnInit(): void {
@@ -28,14 +29,9 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       name:[null,[Validators.required,Validators.maxLength(50),Validators.minLength(4)]],
       email:[null,[Validators.required,Validators.pattern(this.emailRegex)]],
-      //adress:[null,[Validators.required]],
-      //phone:[null,[Validators.required,Validators.maxLength(8),Validators.minLength(8)]],
       password:[null,[Validators.required,Validators.pattern(this.passwordRegex )]],
       confirmPassword:[null,[Validators.required,Validators.pattern(this.passwordRegex )]],
-      acceptTerms:[false, [Validators.requiredTrue]],
-
-     // countrie:[null,[Validators.required]],
-      //citie:[null,[Validators.required]],
+      acceptTerms:[false, [Validators.requiredTrue]]
 
     },
     {
@@ -45,29 +41,32 @@ export class RegisterComponent implements OnInit {
   get f(){
     return this.registerForm.controls;
  }
+
+
+ showSuccess() {
+      this.Toast.success({detail:'Success Message' , summary:'you are successufully registered',duration:1000})
+  }
+  
+  showError() {
+        this.Toast.error({detail:'Error Message' , summary:'Something went wrong',duration:5000})
+  }
+
  onSubmitForm(){
   this.authService.register(this.registerForm.value).subscribe(
     user=>{
       console.log("succes")
       let token = user.token
       localStorage.setItem('Token',token)
-        },
+      this.showSuccess()},
     (err) => {
-        this.openModalWithComponent()
         err.message;
-       console.log(err.message);
+        console.log(err.message);
+        this.showError()
         }
   )
  }
- openModalWithComponent() {
-  const initialState: ModalOptions = {
-    initialState: {
-      body:'Email aleardy registred',
-      title: 'Registration failed'
-    }
-  };
-  this.bsModalRef = this.modalService.show(ModalContentComponent, initialState);
-  this.bsModalRef.content.closeBtnName = 'Close';
-}
+
+
+
 
 }

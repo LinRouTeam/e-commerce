@@ -2,11 +2,29 @@
     color: #e24c4c;
 }
 
-  .ng-touched.ng-invalid{
+.ng-touched.ng-invalid{
     border-color: #e24c4c;
-  }
-  .fa{
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+}
 
-  }
+
+.fa{
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color:#88CBBB
+
+}
+
+label{
+  font-size: 15px;
+}
+
+.card,.card-body{
+  height: 600px;
+}
+
+.btn-primary{
+  background-color: #88CBBB;
+  border: #88CBBB;
+  color: white;
+  font-weight: bold;
+}

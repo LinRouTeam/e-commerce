@@ -1,99 +1,96 @@
-
 <section class="vh-150" style="background-color: #eee;">
     <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-lg-12 col-xl-11">
-          <div class="card text-black mt-4" style="border-radius: 25px;">
-            <div class="card-body p-md-5">
+      <div class="row d-flex justify-content-center align-items-center h-100 mt-5">
+        <div class="col-lg-10 col-xl-11">
+          <div class="card text-black mt-5" style="border-radius: 25px;">
+            <div class="card-body p-md-4 ">
               <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <div class="col-md-4 col-lg-4 col-xl-5 order-2 order-lg-1">
   
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                  <p class="text-center h1  mb-4 mx-1 mx-md-4 mt-3">Sign up</p>
   
                   <form class="mx-1 mx-md-4"[formGroup]="registerForm" (ngSubmit)="onSubmitForm()">
   
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fa   fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="d-flex flex-row align-items-center mb-3">
+                    <i class="fa   fa-user fa-lg me-3 fa-fw mt-4"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="name" class="form-control" formControlName="name"/>
-                        <label class="form-label" for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" formControlName="name" placeholder="Name"/>
                         <div *ngIf="f['name'].touched && f['name'].invalid">
                           <div *ngIf="f['name'].errors && f['name'].errors['required']" class="error">
-                            
+                            This field is required
                           </div>
                           <div *ngIf="f['name'].errors && f['name'].errors['minlength']" class="error">
-                            Name must be at least 4 characters long.                          </div>
-                            <div *ngIf="f['name'].errors && f['name'].errors['maxlength']" class="error">
-                            Name couldn't be more then 50 characters long.                          </div>
+                            Name must be at least 4 characters long
+                          </div>
+                          <div *ngIf="f['name'].errors && f['name'].errors['maxlength']" class="error">
+                            Name couldn't be more then 50 characters long 
+                          </div>
                         </div>
                       </div>
                     </div>
   
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fa   fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="d-flex flex-row align-items-center mb-3">
+                      <i class="fa   fa-envelope fa-lg me-3 fa-fw mt-4"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="email" id="email" class="form-control" formControlName="email" />
-                        <label class="form-label" for="email">Your Email</label>
+                        <input type="email" id="email" class="form-control" formControlName="email" placeholder="Email address" />
                         <div *ngIf="f['email'].touched && f['email'].invalid" >
                           <div *ngIf="f['email'].errors && f['email'].errors['required']" class="error">
+                            This field is required
                           </div>
                           <div *ngIf="f['email'].errors && f['email'].errors['pattern']" class="error">
-                            Please provide a valid email address.       </div>
+                            Please provide a valid email address.
+                          </div>
                         </div>
                       </div>
                     </div>
                 
                    
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fa   fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="d-flex flex-row align-items-center mb-3">
+                      <i class="fa   fa-lock fa-lg me-3 fa-fw mt-4"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="password" id="passsword" class="form-control" formControlName="password" />
-                        <label class="form-label" for="password">Password</label>
+                        <input type="password" id="passsword" class="form-control" formControlName="password" placeholder="Password"/>
                         <div *ngIf="f['password'].touched && f['password'].invalid" >
                           <div *ngIf="f['password'].errors && f['password'].errors['required']" class="error">
-                           Invalid password
+                           This field is required
                           </div>
                           <div *ngIf="f['password'].errors && f['password'].errors['pattern']" class="error">
-                           Invalid password
+                            password must be at least 8 characters
                          </div>
                         </div>
                       </div>
                     </div>
   
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fa   fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="d-flex flex-row align-items-center mb-3">
+                      <i class="fa   fa-key fa-lg me-3 fa-fw mt-4"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword"/>
-                        <label class="form-label" for="confirmPassword">Repeat your password</label>
+                        <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword" placeholder="Confirm password"/>
                         <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid" >
                           <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['required']" class="error">
-                            Invalid password
+                            This field is required
                           </div>
                           <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['matching']" class="error">
-                           Password doesn't match
+                           Password and confirm password doesn't match
                           </div>
                         </div>
                       </div>
                     </div>
   
-                    <div class="form-check d-flex justify-content-center mb-5">
+                    <div class="form-check d-flex justify-content-center mt-4">
                       <input class="form-check-input me-2" type="checkbox" value="" id="accepTerms" formControlName="acceptTerms" />
                       <label class="form-check-label" for="accepTerms">
                         I agree all statements in <a href="#!">Terms of service</a>
                       </label>
                     </div>
   
-                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <div class="d-flex justify-content-center mx-4 mt-4 mb-lg-4 ">
                       <button type="button" class="btn btn-primary btn-lg" [disabled]="registerForm.invalid" (click)="onSubmitForm()">Register</button>
                     </div>
-  
                   </form>
   
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
   
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                    class="img-fluid" alt="Sample image">
+                  <img src="/assets/images/signup.svg"  class="img-fluid" alt="Sample image">
   
                 </div>
               </div>
