@@ -1,0 +1,17 @@
+.logo{
+    color: black!important;;
+}
+a{
+    color: #58595b;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: .025em;
+    line-height: 1.5;
+    margin-left: 1.5rem;
+}
+nav{
+    background-color: white;
+}
+.navbar-collapse{
+    margin-right: 4rem;
+}
