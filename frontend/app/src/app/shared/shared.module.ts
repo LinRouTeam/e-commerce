@@ -14,6 +14,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,9 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
   ],
-
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService
+]
 })
 export class SharedModule { }

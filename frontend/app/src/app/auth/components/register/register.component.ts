@@ -51,12 +51,11 @@ export class RegisterComponent implements OnInit {
       console.log("succes")
       let token = user.token
       localStorage.setItem('Token',token)
-      console.log(token)
         },
-        (err) => {
-          this.openModalWithComponent()
-          err.message;
-          console.log(err.message);
+    (err) => {
+        this.openModalWithComponent()
+        err.message;
+       console.log(err.message);
         }
   )
  }

@@ -7,14 +7,14 @@ const register = async (req, res)=>{
     if(!(req.body.password===req.body.confirmPassword)){
         throw new BadRequestError("passwords dont match")
     }
-    checkUser = User.findOne({email:req.body.email})
-    if(user){
+   /* checkUser = User.findOne({email:req.body.email})
+    if(checkUser){
         throw new BadRequestError("email already exist")
 
-    }
+    }*/
     const user = await User.create(req.body)
     const token = user.createJWT()
-    res.status(StatusCodes.CREATED).json({user: { Name: user.name, userId: user._id, Email: user.email, role: user.role }, token})    
+    res.status(StatusCodes.CREATED).json({user: { Name: user.name, userId: user._id, Email: user.email}, token})    
 
     
 }
