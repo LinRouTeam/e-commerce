@@ -3,7 +3,7 @@ require('dotenv').config();
 require('express-async-errors');
 require('dotenv').config();
 const mongoose = require('mongoose')
-const router = require('./routes/routes')
+const userRouter = require('./routes/user')
 const connectDB = require('./db/connect');
 const cors  =require('cors')
 const app = express()
@@ -17,5 +17,5 @@ mongoose.connect(process.env.MONGO_URI,
   app.use(express.json());
 
 //routes
-app.use('/',router);
+app.use('/', userRouter);
 module.exports = app;

@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/shared/service/auth.service';
 import Validation from '../Utils/validation';
 import {  BsModalRef } from 'ngx-bootstrap/modal';
 import { NgToastService } from 'ng-angular-popup';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -19,7 +20,7 @@ export class RegisterComponent implements OnInit {
   }];
 
   constructor(public formBuilder:FormBuilder,
-    public authService:AuthService , private Toast:NgToastService) {
+    public authService:AuthService , private Toast:NgToastService , private router:Router) {
      
    }
 
@@ -57,7 +58,10 @@ export class RegisterComponent implements OnInit {
       console.log("succes")
       let token = user.token
       localStorage.setItem('Token',token)
-      this.showSuccess()},
+      this.showSuccess()
+      this.router.navigateByUrl('/')
+    },
+      
     (err) => {
         err.message;
         console.log(err.message);

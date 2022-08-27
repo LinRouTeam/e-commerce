@@ -8,9 +8,9 @@
 
 
 .fa{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    color:#88CBBB
+    color:#193C75
 
 }
 
@@ -22,9 +22,29 @@ label{
   height: 600px;
 }
 
+.h1{
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: 500;
+}
+
 .btn-primary{
-  background-color: #88CBBB;
-  border: #88CBBB;
+  background-color: #193C75;
+  border: #193C75;
   color: white;
+  font-weight: bold;
+}
+.img-fluid{
+  margin-left: 120px;
+}
+
+.fa-lock , .fa-user , .fa-key{
+  font-size: 1.4rem;
+}
+
+.p1{
+  font-size: 14px;
+}
+
+a{
   font-weight: bold;
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { LandingComponent } from './components/landing/landing.component';
+import { httpInterceptorProviders } from './shared/interceptors';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,7 @@ import { LandingComponent } from './components/landing/landing.component';
     SharedModule,
     AuthModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

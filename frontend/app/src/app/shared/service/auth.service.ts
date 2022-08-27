@@ -22,6 +22,15 @@ export class AuthService {
     }):Observable<any>{
       return this.http.post<any>(this.url+'register' , formValue , this.httpOptions);
     }
+
+    logIn(formValue:
+    {
+      email:string,
+      password:string,
+    }):Observable<any>{
+      return this.http.post<any>(this.url+'login' , formValue , this.httpOptions);
+    }
+
     public isAuthenticated(): boolean{
       const token  = localStorage.getItem('Token') as string
       return !this.jwtHelper.isTokenExpired(token)

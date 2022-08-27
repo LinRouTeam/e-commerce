@@ -13,7 +13,10 @@
         <a class="nav-link" routerLink>Cart</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/auth/register">MyAccount</a>
+        <a class="nav-link" routerLink="/auth/logIn" *ngIf="isAuthenticated()===false">Log In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  *ngIf="isAuthenticated()===true">{{user.name}}</a>
       </li>
       
     </ul>

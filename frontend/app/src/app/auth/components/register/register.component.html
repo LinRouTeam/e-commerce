@@ -7,7 +7,7 @@
               <div class="row justify-content-center">
                 <div class="col-md-4 col-lg-4 col-xl-5 order-2 order-lg-1">
   
-                  <p class="text-center h1  mb-4 mx-1 mx-md-4 mt-3">Sign up</p>
+                  <p class="text-center h1  mb-4 mx-1 mx-md-4 mt-3">Register</p>
   
                   <form class="mx-1 mx-md-4"[formGroup]="registerForm" (ngSubmit)="onSubmitForm()">
   
@@ -78,19 +78,22 @@
                     <div class="form-check d-flex justify-content-center mt-4">
                       <input class="form-check-input me-2" type="checkbox" value="" id="accepTerms" formControlName="acceptTerms" />
                       <label class="form-check-label" for="accepTerms">
-                        I agree all statements in <a href="#!">Terms of service</a>
+                        I agree all statements in <a href="#!" style="color:#193C75  ;font-weight: bold;">Terms of service</a>
                       </label>
                     </div>
   
                     <div class="d-flex justify-content-center mx-4 mt-4 mb-lg-4 ">
                       <button type="button" class="btn btn-primary btn-lg" [disabled]="registerForm.invalid" (click)="onSubmitForm()">Register</button>
                     </div>
+                    <div class="d-flex justify-content-center mx-4 mb-lg-4 ">
+                      <p class="p1">Already have an account?   <a routerLink="/auth/logIn" style="color: #193C75 ;">Log In</a> </p>
+                    </div>
                   </form>
   
                 </div>
-                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 ">
   
-                  <img src="/assets/images/signup.svg"  class="img-fluid" alt="Sample image">
+                  <img src="/assets/images/register2.svg"  class="img-fluid" alt="Sample image">
   
                 </div>
               </div>

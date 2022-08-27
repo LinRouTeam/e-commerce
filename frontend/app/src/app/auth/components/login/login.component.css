@@ -1,0 +1,56 @@
+.error{
+    color: #e24c4c;
+}
+
+.ng-touched.ng-invalid{
+    border-color: #e24c4c;
+}
+
+.h1{
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: 500;
+}
+
+.fa{
+    font-size: 1.3rem;
+    margin-top: 2.4rem;
+    color:#193C75
+
+}
+
+.fa-lock{
+  font-size: 1.7rem;
+  margin-top: 2.5rem;
+}
+
+#email{
+    margin-top: 40px;
+}
+#password{
+  margin-top: 40px;
+}
+
+.card,.card-body{
+  height: 560px;
+  width: 1000px;
+}
+
+.card{
+    margin-left: 100px;
+}
+.btn-primary{
+  background-color: #193C75;
+  border: #193C75;
+  color: white;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.p1{
+  text-align: center;
+  width: 70%;
+  margin-top: 15px;
+}
+a{
+  font-weight: bold;
+}
