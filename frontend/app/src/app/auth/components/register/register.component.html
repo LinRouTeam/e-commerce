@@ -11,7 +11,7 @@
   
                   <form class="mx-1 mx-md-4"[formGroup]="registerForm" (ngSubmit)="onSubmitForm()">
   
-                    <div class="d-flex flex-row align-items-center mb-3">
+                  <div class="d-flex flex-row align-items-center mb-3">
                     <i class="fa   fa-user fa-lg me-3 fa-fw mt-4"></i>
                       <div class="form-outline flex-fill mb-0">
                         <input type="text" id="name" class="form-control" formControlName="name" placeholder="Name"/>
@@ -24,12 +24,12 @@
                           </div>
                           <div *ngIf="f['name'].errors && f['name'].errors['maxlength']" class="error">
                             Name couldn't be more then 50 characters long 
-                          </div>
+                           </div>
                         </div>
-                      </div>
                     </div>
-  
-                    <div class="d-flex flex-row align-items-center mb-3">
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-3">
                       <i class="fa   fa-envelope fa-lg me-3 fa-fw mt-4"></i>
                       <div class="form-outline flex-fill mb-0">
                         <input type="email" id="email" class="form-control" formControlName="email" placeholder="Email address" />
@@ -42,10 +42,9 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                
-                   
-                    <div class="d-flex flex-row align-items-center mb-3">
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-3">
                       <i class="fa   fa-lock fa-lg me-3 fa-fw mt-4"></i>
                       <div class="form-outline flex-fill mb-0">
                         <input type="password" id="passsword" class="form-control" formControlName="password" placeholder="Password"/>
@@ -55,12 +54,12 @@
                           </div>
                           <div *ngIf="f['password'].errors && f['password'].errors['pattern']" class="error">
                             password must be at least 8 characters
-                         </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-  
-                    <div class="d-flex flex-row align-items-center mb-3">
+                  </div>  
+
+                <div class="d-flex flex-row align-items-center mb-3">
                       <i class="fa   fa-key fa-lg me-3 fa-fw mt-4"></i>
                       <div class="form-outline flex-fill mb-0">
                         <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword" placeholder="Confirm password"/>
@@ -73,8 +72,7 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-  
+                </div>             
                     <div class="form-check d-flex justify-content-center mt-4">
                       <input class="form-check-input me-2" type="checkbox" value="" id="accepTerms" formControlName="acceptTerms" />
                       <label class="form-check-label" for="accepTerms">
@@ -94,7 +92,7 @@
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 ">
   
                   <img src="/assets/images/register2.svg"  class="img-fluid" alt="Sample image">
-  
+
                 </div>
               </div>
             </div>
